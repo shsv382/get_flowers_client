@@ -7,7 +7,7 @@ import Spinner from '../../components/spinner/spinner.component';
 import { Link } from 'react-router-dom';
 
 export function Shop(props) {
-	const products = useSelector(state => state.products);
+	const products = useSelector(state => state.products.products);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -21,7 +21,7 @@ export function Shop(props) {
 				<Spinner /> :
 				products.error ?
 					<div>Не удалось загрузить товары</div> :		
-						products.products?.rows?.map(product => (
+						products.map(product => (
 							<Link to={`/products/${product.id}`}>
 								<div key={product.id}>{product.name}</div>
 							</Link>
