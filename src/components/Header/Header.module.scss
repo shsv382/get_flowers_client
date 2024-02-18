@@ -1,4 +1,53 @@
 header {
-    display: flex; 
-    gap: 30px;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
 }
+
+.container {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    @media screen and (max-width: 800px) {
+        height: 60px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+}
+
+.logoContainer {
+    height: 100%;
+    width: 70px;
+    padding: 25px;
+    @media screen and (max-width: 800px) {
+        width: 50px;
+        padding: 0;
+    }
+}
+
+.optionsContainer {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    @media screen and (max-width: 800px) {
+        width: 80%;
+    }
+}
+
+.optionLink {
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+.option {
+    padding: 10px 15px;
+  }

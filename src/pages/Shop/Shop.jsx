@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { API_URL } from '../../constants';
 import Spinner from '../../components/spinner/spinner.component';
 import { Link } from 'react-router-dom';
+import ProductCard from '../../components/ProductCard/ProductCard';
 
 export function Shop(props) {
 	const products = useSelector(state => state.products.products);
@@ -16,16 +17,18 @@ export function Shop(props) {
 
 	return <div {...props}>
 		<h1>Shop Page</h1>
+		<div className={styles.container}>
 		{
 			(products.pending) ? 
-				<Spinner /> :
-				products.error ?
-					<div>Не удалось загрузить товары</div> :		
-						products.map(product => (
-							<Link to={`/products/${product.id}`}>
-								<div key={product.id}>{product.name}</div>
-							</Link>
-						)) 
-		}
+			<Spinner /> :
+			products.error ?
+			<div>Не удалось загрузить товары</div> :		
+			products.map(product => (
+				<Link to={`/products/${product.id}`}>
+				<ProductCard key={product.id} product={product} />
+				</Link>
+				)) 
+			}
+		</div>
 	</div>;
 };

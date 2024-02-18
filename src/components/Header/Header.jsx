@@ -3,10 +3,17 @@ import { Link } from 'react-router-dom';
 
 export const Header = (props) => {
 	return <header {...props}>
-		<Link to='/'>Home</Link>
-		<Link to='/shop'>Shop</Link>
-		<Link to='/cart'>Cart</Link>
-		<Link to='/products/1'>1</Link>
-		<Link to='/admin'>Admin</Link>
+		<div className={styles.container}>
+			<div className={styles.logoContainer}>
+				<Link className={styles.option} to='/'>LOGO</Link>
+			</div>
+		</div>
+		<nav>
+			<ul className={styles.optionsContainer}>
+				<li className={styles.optionsLink}><Link className={styles.option} to='/admin'>Admin</Link></li>
+				<li className={styles.optionsLink}><Link className={styles.option} to='/shop'>Shop</Link></li>
+				<li className={styles.optionsLink}><Link className={styles.option} to='/cart'>Cart</Link></li>
+			</ul>
+		</nav>
 	</header>;
 };
