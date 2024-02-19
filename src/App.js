@@ -1,3 +1,4 @@
+import { Container } from "@mui/material";
 import AppRouter from "./AppRouter";
 import { Header } from "./components/Header";
 
@@ -5,7 +6,9 @@ function App() {
   return (
     <div>
       <Header />
-      <AppRouter />
+      <Container>
+        <AppRouter />
+      </Container>
     </div>
   );
 }

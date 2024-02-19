@@ -11,24 +11,27 @@ import { STATIC_URL } from '../../constants';
 export default function ProductCard({product}) {
 	const {name, description, price, img} = product;
   return (
-    <Card sx={{ width: 345, height: 320 }}>
-      <CardMedia
-        component="img"
-        alt={name}
-        height="180"
-        image={`${STATIC_URL}/${img}`}
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          {name}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {description}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Купить за {price}</Button>
-      </CardActions>
+    <Card className={styles.card}>
+		<div className={styles.imageWrapper}>
+			<CardMedia
+				component="img"
+				alt={name}
+				height="200"
+				image={`${STATIC_URL}/${img}`}
+				className={styles.image}
+			/>
+		</div>
+		<CardContent className={styles.cardContent}>
+			<Typography gutterBottom variant="h5" component="div" textAlign="center">
+				{name}
+			</Typography>
+		</CardContent>
+		<CardActions className={styles.actions}>
+			<Button className={styles.cardAction} size="small">Заказать</Button>
+			<Typography gutterBottom variant="h5" component="div" textAlign="center">
+				{price} &#8381;
+			</Typography>
+		</CardActions>
     </Card>
   );
 }

@@ -1,0 +1,51 @@
+@use "./colors";
+
+%icon {
+    display: inline-block;
+    mask-position: center center;
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    background-color: $white4;
+}
+
+/* 
+To add any svg icon to the project
+insert *.svg file to the "/src/assets/svg" directory
+and then push it's name (without .svg) to the array $items
+you see below. Please add names in asc-order (abc)
+
+Чтобы добавить svg-иконки в проект
+поместите файл svg в директорию "/src/assets/svg",
+а затем допишите название файла (без расширения)
+в массив $items, который видите ниже. 
+Пожалуйста, добавляйте имена по алфавиту
+*/
+
+$items: add, arrow-down, arrow-down-circle, arrow-down-square, arrow-left-circle, arrow-left-square, arrow-right-circle, arrow-right-square, arrow-up-square, burger, calendar, check, down-circle, down-square, ellipse, gallery, heart, home, iaminvestor, iamspecialist, left-circle, left-square, lock, mail, message-text, message, right-circle, right-square, save, search, send, user-square, up-circle, up-square, video-square;
+
+@each $item in $items {
+  .icon-#{$item} {
+    @extend %icon;
+    mask-image: url(../assets/svg/#{$item}.svg);
+  }
+}
+
+/* 
+Usage:
+To insert an icon on a page, simply add any element and give it a class of "icon-{icon-name}", for example
+<i className="icon-arrow-down" />
+
+To change the size or fill color, use additional classes.
+
+
+Использование:
+Чтобы вставить иконку на страницу, достаточно
+добавить любой элемент и присвоить ему 
+класс "icon-{имя-иконки}", например
+<i className="icon-arrow-down" />
+
+Для изменения размера или цвета заливки
+испоьлзуйте дополнительные классы
+*/

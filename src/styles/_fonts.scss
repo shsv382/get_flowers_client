@@ -1,0 +1,52 @@
+$lato-font-sizes: (
+  Thin:       100,
+  Light:      300, 
+  Regular:    400, 
+  Bold:       700, 
+  Black:      900, 
+);
+
+$muller-font-sizes: (
+  Hairline:    50, 
+  Thin:       100,
+  UltraLight: 200, 
+  Light:      300, 
+  Regular:    400, 
+  Medium:     600, 
+  Bold:       700, 
+  Black:      800, 
+  ExtraBold:  900, 
+  Heavy:     1000, 
+);
+
+@each $font-size-name, $font-size in $muller-font-sizes {
+  @font-face {
+    font-family: 'Muller';
+    src: url('../fonts/Muller' + $font-size-name + '.ttf') format('truetype');
+    font-weight: $font-size;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Muller';
+    src: url('../fonts/Muller' + $font-size-name + 'Italic.ttf') format('truetype');
+    font-weight: $font-size;
+    font-style: italic;
+  }
+}
+
+@each $font-size-name, $font-size in $lato-font-sizes {
+  @font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-' + $font-size-name + '.ttf') format('truetype');
+    font-weight: $font-size;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-' + $font-size-name + 'Italic.ttf') format('truetype');
+    font-weight: $font-size;
+    font-style: italic;
+  }
+}

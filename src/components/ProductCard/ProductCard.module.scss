@@ -1,0 +1,37 @@
+@import '../../styles/colors';
+
+.card {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    &:hover {
+        .image {
+            transform: scale(1.1);
+            transition: transform 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+    }
+}
+
+.imageWrapper {
+    height: 200px;
+    overflow: hidden;
+}
+
+
+.actions {
+    margin-top: auto;
+    justify-self: flex-end;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardAction {
+    color: $primary1;
+    width: 50%;
+    border: 1px solid $primary1;
+    border-radius: 5px;
+    &:hover {
+        background-color: rgba($primary1, 0.04);
+    }
+}
