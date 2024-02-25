@@ -1,6 +1,7 @@
 import { Container } from "@mui/material";
 import AppRouter from "./AppRouter";
 import { Header } from "./components/Header";
+import './App.scss';
 
 function App() {
   return (

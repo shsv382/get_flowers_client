@@ -1,29 +1,52 @@
 @import '../../styles/colors';
 
 .card {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 350px;
     display: flex;
     flex-direction: column;
+    .options {
+        transform: translate(-50%, 50px);
+        transition: all 0.3s ease-out;
+    }
     &:hover {
+        box-shadow: 0px 2px 12px -1px rgba(0,0,0,0.14), 0px 1px 12px 0px rgba(0,0,0,0.1), 0px 1px 14px 0px rgba(0,0,0,0.1);
         .image {
             transform: scale(1.1);
             transition: transform 6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        .options {
+            transform: translate(-50%, 0);
+            transition: all 0.3s ease-out;
         }
     }
 }
 
 .imageWrapper {
-    height: 200px;
+    height: 300px;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+    &:hover {
+        box-shadow: 0px 2px 2px -1px rgba(0,0,0,0.3), 0px 1px 2px 0px rgba(0,0,0,0.24), none;
+    }
 }
 
+.cardContent {
+    padding: 1em 1em 0 1em;
+}
 
 .actions {
     margin-top: auto;
     justify-self: flex-end;
     display: flex;
     justify-content: space-between;
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .cardAction {
@@ -34,4 +57,9 @@
     &:hover {
         background-color: rgba($primary1, 0.04);
     }
+}
+
+.name {
+    font-size: 14px;
+    font-weight: 600;
 }

@@ -23,7 +23,7 @@ you see below. Please add names in asc-order (abc)
 Пожалуйста, добавляйте имена по алфавиту
 */
 
-$items: add, arrow-down, arrow-down-circle, arrow-down-square, arrow-left-circle, arrow-left-square, arrow-right-circle, arrow-right-square, arrow-up-square, burger, calendar, check, down-circle, down-square, ellipse, gallery, heart, home, iaminvestor, iamspecialist, left-circle, left-square, lock, mail, message-text, message, right-circle, right-square, save, search, send, user-square, up-circle, up-square, video-square;
+$items: add, arrow-down, arrow-down-circle, arrow-down-square, arrow-left-circle, arrow-left-square, arrow-right-circle, arrow-right-square, arrow-up-square, burger, calendar, cart, check, down-circle, down-square, ellipse, eye, gallery, heart, home, iaminvestor, iamspecialist, left-circle, left-square, lock, mail, message-text, message, right-circle, right-square, save, search, send, user-square, up-circle, up-square, video-square;
 
 @each $item in $items {
   .icon-#{$item} {
